@@ -93,10 +93,10 @@ export default {
         query: this.keyword,
         channel: this.pulldowns
       }
-      this.$axios.get('https://slack.com/api/channels.history?token=xoxp-762165440097-755809321058-839119744081-64e744368471cfb7f045ea474822bd45', {params})
+      this.$axios.get('https://slack.com/api/channels.history?token=xoxp-762165440097-755809321058-849259141270-5133ad9cb20141e8cd5d49ac6ac563e2', {params})
         .then(response => {
           this.items = response.data.messages
-          this.$axios.get('https://slack.com/api/users.list?token=xoxp-762165440097-755809321058-839119744081-64e744368471cfb7f045ea474822bd45&pretty=1')
+          this.$axios.get('https://slack.com/api/users.list?token=xoxp-762165440097-755809321058-849259141270-5133ad9cb20141e8cd5d49ac6ac563e2&pretty=1')
             .then(response => {
               this.membersName = response.data.members
               callback()
