@@ -16,7 +16,7 @@
         <option value="yuto_kun">yuto_kun</option>
         <option value="tomoya">tomoya</option>
       </select>
-      <input type="text" v-model="keyword" placeholder="メッセージ入力" class="serch btn" style="border:1px black solid">
+      <input type="text" v-model="keyword" placeholder="メッセージ入力" class="serch btn" style="border:1px black solid" @keydown.enter="filterItems">
       <div class="bye"><input type="submit" v-on:click="filterItems" value="検索" class="sousin" style="border:1px black solid"></div>
     </div>
     <table border=1 v-cloak class="fixed" v-if="display">
