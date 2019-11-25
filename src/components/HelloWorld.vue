@@ -11,12 +11,12 @@
         <option value="CN7PT9KU2">#random</option>
         <option value="CN937U5RR">#general</option>
       </select>
-      <select v-model="usrname" v-cloak style="border:1px black solid" class="btn">
+      <select v-model="usrname" v-cloak style="border:1px black solid" class="btn userselect">
         <option disabled value="" class="colors" style="color:red">ユーザー選択</option>
         <option value="yuto_kun">yuto_kun</option>
         <option value="tomoya">tomoya</option>
       </select>
-      <input type="text" v-model="keyword" placeholder="メッセージ入力" class="serch btn" style="border:1px black solid" @keydown.enter="filterItems">
+      <input type="text" v-model="keyword" placeholder="メッセージ入力" class="search btn" style="border:1px black solid" @keydown.enter="filterItems">
       <div class="bye"><input type="submit" v-on:click="filterItems" value="検索" class="sousin" style="border:1px black solid"></div>
     </div>
     <table border=1 v-cloak class="fixed" v-if="filteredItems.length">
@@ -51,7 +51,7 @@
         </tr>
       </tbody>
     </table>
-    <p v-if="!filteredItems.length">現在の検索結果は0件です</p>
+    <p v-if="!filteredItems.length" class="noResult">現在の検索結果は0件です</p>
     </center>
 </div>
 </template>
@@ -169,8 +169,12 @@ select {
 
 .btn {
   margin-right: 100px;
+  font-size: 20px;
 }
 
+.userselect{
+  margin-bottom: 5px;
+}
 .channel {
   margin-bottom: 5px;
 }
@@ -198,18 +202,17 @@ input {
 
 input.sousin {
   margin-top: 5px;
-  font-size: 15px;
-  padding: 0 30px;
+  font-size: 20px;
   margin-right: 100px;
   display: inline-block;
   max-width: 180px;
   text-align: left;
   border: 2px solid #9ec34b;
-  font-size: 13px;
+  font-size: 17px;
   color: #005ab3;
   text-decoration: none;
   font-weight: bold;
-  padding: 0px 16px;
+  padding: 0px 20px;
   border-radius: 4px;
   transition: .4s;
 }
@@ -302,7 +305,18 @@ th.reactions {
   height: 24px;
 }
 
+.noResult{
+  font-size: 20px;
+  color:red;
+}
+
 [v-cloak] {
   display: none;
+}
+@media screen and (max-width: 896px) and (orientation: landscape){
+  .secch{
+    text-align: center;
+    margin-right:50px;
+  }
 }
 </style>
