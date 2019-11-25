@@ -19,7 +19,7 @@
       <input type="text" v-model="keyword" placeholder="メッセージ入力" class="serch btn" style="border:1px black solid" @keydown.enter="filterItems">
       <div class="bye"><input type="submit" v-on:click="filterItems" value="検索" class="sousin" style="border:1px black solid"></div>
     </div>
-    <table border=1 v-cloak class="fixed" v-if="display">
+    <table border=1 v-cloak class="fixed" v-if="filteredItems.length">
       <tbody class="list">
         <tr>
           <th class="name">ユーザー名</th>
@@ -125,13 +125,6 @@ export default {
           }
         }
         this.filteredItems = filtered
-        if (this.filteredItems === '') {
-          this.display = false
-        } else if (this.pulldowns === '') {
-          this.display = false
-        } else {
-          this.display = true
-        }
       })
     },
     sortTime: function () {
