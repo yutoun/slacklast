@@ -106,7 +106,7 @@ export default {
     filterItems: function () {
       this.getItems(() => {
         if (this.pulldowns === '') {
-          return alert('チャネル名を入れてください')
+          return window.alert('チャネル名を入れてください')
         }
         for (let i in this.membersName) {
           if (this.membersName[i].real_name.includes(this.usrname)) {
