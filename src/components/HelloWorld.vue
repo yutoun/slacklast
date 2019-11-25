@@ -51,7 +51,7 @@
         </tr>
       </tbody>
     </table>
-    <p v-else>現在の検索結果は0件です</p>
+    <p v-if="!filteredItems.length">現在の検索結果は0件です</p>
     </center>
 </div>
 </template>
