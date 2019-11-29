@@ -6,7 +6,8 @@
 
 <script>
 import HelloWorld from './components/HelloWorld'
-
+const env = require('dotenv').config()
+console.log(`env: ${env.error}`)
 export default {
   name: 'App',
   components: {

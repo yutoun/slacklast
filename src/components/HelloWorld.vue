@@ -82,8 +82,14 @@ export default {
     },
     emoji: function (reactions) {
       const emoji = require('node-emoji')
+      console.log(`node-emoji: ${emoji}`)
       return emoji.get(reactions)
     }
+  },
+  created: function () {
+    require('dotenv').config()
+    console.log(process.env.VUE_APP_SLACK_KEY1)
+    console.log(process.env.VUE_APP_SLACK_KEY2)
   },
   methods: {
     getItems: function (callback) {
