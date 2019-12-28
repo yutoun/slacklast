@@ -10,6 +10,10 @@ import HelloWorld from './components/HelloWorld'
 // let url = process.env.VUE_APP_
 // console.log(url)
 
+console.log('===')
+console.log(process.env)
+console.log('===')
+
 export default {
   name: 'App',
   components: {
