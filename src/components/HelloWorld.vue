@@ -87,9 +87,17 @@ export default {
     }
   },
   created: function () {
-    require('dotenv').config()
-    console.log(process.env.VUE_APP_SLACK_KEY1)
-    console.log(process.env.VUE_APP_SLACK_KEY2)
+    // const env = require('dotenv').config()
+    // console.log(`env: ${env.error}`)
+    // console.log(process.error)
+    // console.log(process.env.VUE_APP_NODE_ENV)
+    // console.log(process.env.VUE_APP_SLACK_KEY1)
+    // console.log(process.env.VUE_APP_SLACK_KEY2)
+    // console.log(process.env.NODE_ENV)
+    // let key = process.env.VUE_APP_SLACK_KEY2;
+    // console.log(key);
+    // console.log(this.slackPath)
+    console.log(process.env.VUE_APP_API_URL_BASE);
   },
   methods: {
     getItems: function (callback) {

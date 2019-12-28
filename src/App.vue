@@ -6,8 +6,10 @@
 
 <script>
 import HelloWorld from './components/HelloWorld'
-const env = require('dotenv').config()
-console.log(`env: ${env.error}`)
+// const env = require('dotenv').config()
+// let url = process.env.VUE_APP_
+// console.log(url)
+
 export default {
   name: 'App',
   components: {
