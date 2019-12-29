@@ -7,10 +7,6 @@
 <script>
 import HelloWorld from './components/HelloWorld'
 
-console.log('===')
-console.log(process.env)
-console.log('===')
-
 export default {
   name: 'App',
   components: {
