@@ -87,16 +87,6 @@ export default {
     }
   },
   created: function () {
-    // const env = require('dotenv').config()
-    // console.log(`env: ${env.error}`)
-    // console.log(process.error)
-    // console.log(process.env.VUE_APP_NODE_ENV)
-    // console.log(process.env.VUE_APP_SLACK_KEY1)
-    // console.log(process.env.VUE_APP_SLACK_KEY2)
-    // console.log(process.env.NODE_ENV)
-    // let key = process.env.VUE_APP_SLACK_KEY2;
-    // console.log(key);
-    // console.log(this.slackPath)
     console.log(process.env.VUE_APP_API_URL_BASE);
   },
   methods: {
@@ -107,10 +97,10 @@ export default {
         query: this.keyword,
         channel: this.pulldowns
       }
-      this.$axios.get('https://slack.com/api/channels.history?token=XXX', {params})
+      this.$axios.get('https://slack.com/api/channels.history?token=xoxp-762165440097-755809321058-849259141270-5133ad9cb20141e8cd5d49ac6ac563e2', {params})
         .then(response => {
           this.items = response.data.messages
-          this.$axios.get('https://slack.com/api/users.list?token=XXX')
+          this.$axios.get('https://slack.com/api/users.list?token=xoxp-762165440097-755809321058-849259141270-5133ad9cb20141e8cd5d49ac6ac563e2&pretty=1')
             .then(response => {
               this.membersName = response.data.members
               callback()
